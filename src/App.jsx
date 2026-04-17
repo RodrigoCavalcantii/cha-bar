@@ -3,9 +3,10 @@ import Hero from './components/Hero';
 import History from './components/History';
 import Countdown from './components/Countdown';
 import Location from './components/Location';
-import Calendar from './components/Calendar';
+import DressCode from './components/DressCode';
 import GiftList from './components/GiftList';
 import MessageWall from './components/MessageWall';
+import AudioPlayer from './components/AudioPlayer';
 
 function App() {
   useEffect(() => {
@@ -29,11 +30,12 @@ function App() {
 
   return (
     <div className="app">
+      <AudioPlayer />
       <Hero />
       <div className="fade-in"><History /></div>
       <div className="fade-in"><Countdown /></div>
       <div className="fade-in"><Location /></div>
-      <div className="fade-in"><Calendar /></div>
+      <div className="fade-in"><DressCode /></div>
       <div className="fade-in"><GiftList /></div>
       <div className="fade-in"><MessageWall /></div>
 
@@ -49,7 +51,7 @@ function App() {
         <p className="serif" style={{ fontSize: '1.2rem', marginBottom: '0.5rem', textTransform: 'none' }}>
           Aline & Fernando
         </p>
-        <p>25.10.2026</p>
+        <p>06.06.2026</p>
       </footer>
     </div>
   );
