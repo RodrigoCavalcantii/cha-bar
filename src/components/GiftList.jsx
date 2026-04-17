@@ -76,7 +76,7 @@ const GiftList = () => {
 
                 <p style={{ color: 'var(--text-secondary)', textAlign: 'justify', marginBottom: '0.10rem', fontSize: '0.95rem', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6' }}>
                     Estamos começando uma nova fase do zero e montamos esta lista para nos ajudar a construir nosso lar! 🤍
-                <fix address in calendar/p>
+                </p>
                 <p style={{ color: 'var(--text-secondary)', textAlign: 'justify', marginBottom: '0.10rem', fontSize: '0.95rem', maxWidth: '700px', margin: '0 auto 2rem', lineHeight: '1.6' }}>
                     Mais do que qualquer presente, nossa maior alegria é celebrar com você.
                 </p>
