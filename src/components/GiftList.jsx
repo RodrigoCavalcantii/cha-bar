@@ -20,7 +20,7 @@ const GiftList = () => {
     const [selectedGift, setSelectedGift] = useState(null);
     const [redirectingStore, setRedirectingStore] = useState(null);
     const [copied, setCopied] = useState(false);
-    const pixKey = "81997920168";
+    const pixKey = "aline-e-fernando@outlook.com";
 
     const [modalStep, setModalStep] = useState(1);
     const [msgName, setMsgName] = useState('');
@@ -176,7 +176,7 @@ const GiftList = () => {
                     ))}
                 </div>
 
-                {/* External Stores Section */}
+                {/* External Stores Section
                 <div style={{ textAlign: 'center', marginTop: '2rem' }}>
                     <h3 className="serif" style={{ fontSize: '1.8rem', marginBottom: '1rem' }}>Listas em Lojas Reais</h3>
                     <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '0.95rem', maxWidth: '700px', margin: '0 auto 2rem', lineHeight: '1.6' }}>
@@ -211,7 +211,7 @@ const GiftList = () => {
                             </button>
                         ))}
                     </div>
-                </div>
+                </div> */}
 
                 {/* PIX Modal */}
                 {selectedGift && createPortal(
@@ -317,7 +317,7 @@ const GiftList = () => {
                                                 opacity: isSubmitting ? 0.7 : 1
                                             }}
                                         >
-                                            {isSubmitting ? 'Enviando...' : 'Enviar e ver PIX'}
+                                            {isSubmitting ? 'Enviando...' : 'Enviar e ir para pagamento'}
                                         </button>
                                     </form>
 
@@ -332,7 +332,7 @@ const GiftList = () => {
                                             textDecoration: 'underline'
                                         }}
                                     >
-                                        Pular etapa e ir para o PIX
+                                        Pular etapa e ir para pagamento
                                     </button>
                                 </>
                             ) : (
@@ -341,10 +341,6 @@ const GiftList = () => {
                                     <h3 className="serif" style={{ marginBottom: '0.5rem', fontSize: '1.5rem' }}>{selectedGift.name}</h3>
                                     <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
                                         Valor: <span style={{ color: 'var(--accent)', fontWeight: '600' }}>R$ {selectedGift.price.toFixed(2)}</span>
-                                    </p>
-
-                                    <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
-                                        Para contribuir com este presente simbólico, faça um PIX para a chave abaixo:
                                     </p>
 
                                     <div style={{
@@ -390,8 +386,32 @@ const GiftList = () => {
                                             'Copiar Chave PIX'
                                         )}
                                     </button>
-                                    <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', lineHeight: '1.4' }}>
-                                        Receberemos o valor integral na nossa conta.<br />Muito obrigado pelo carinho! ❤️
+
+                                    <button
+                                        onClick={() => window.open(`https://link.infinitepay.io/aline-cavalcant1/VC1D-1HKAn0hnFp-100,00`, '_blank')}
+                                        style={{
+                                            width: '100%',
+                                            padding: '1.1rem',
+                                            backgroundColor: 'var(--accent)',
+                                            color: 'white',
+                                            borderRadius: '8px',
+                                            fontWeight: '600',
+                                            fontSize: '0.9rem',
+                                            marginBottom: '0.8rem',
+                                            cursor: 'pointer',
+                                            border: 'none',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            gap: '0.5rem',
+                                            transition: 'all 0.3s ease'
+                                        }}
+                                    >
+                                        <span style={{ fontSize: '1.2rem' }}>💳</span>
+                                        Pagar com Cartão de Crédito
+                                    </button>
+                                    <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', lineHeight: '1.4', marginBottom: '0.8rem' }}>
+                                        Muito obrigado pelo carinho! ❤️
                                     </p>
                                 </>
                             )}

@@ -6,7 +6,7 @@ const Location = () => {
     const wazeUrl = `https://waze.com/ul?q=${encodeURIComponent(address)}&navigate=yes`;
 
     const scrollToNext = () => {
-        const nextSection = document.getElementById('dress-code');
+        const nextSection = document.getElementById('messages');
         if (nextSection) {
             nextSection.scrollIntoView({ behavior: 'smooth' });
         }

@@ -42,7 +42,7 @@ const Countdown = () => {
     );
 
     const scrollToNext = () => {
-        const nextSection = document.getElementById('location');
+        const nextSection = document.getElementById('dress-code');
         if (nextSection) {
             nextSection.scrollIntoView({ behavior: 'smooth' });
         }

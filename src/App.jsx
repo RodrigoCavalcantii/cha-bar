@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Hero from './components/Hero';
 import History from './components/History';
-import Countdown from './components/Countdown';
 import Location from './components/Location';
 import DressCode from './components/DressCode';
 import GiftList from './components/GiftList';
@@ -33,10 +32,9 @@ function App() {
       <AudioPlayer />
       <Hero />
       <div className="fade-in"><History /></div>
-      <div className="fade-in"><Countdown /></div>
-      <div className="fade-in"><Location /></div>
       <div className="fade-in"><DressCode /></div>
       <div className="fade-in"><GiftList /></div>
+      <div className="fade-in"><Location /></div>
       <div className="fade-in"><MessageWall /></div>
 
       <footer style={{
