@@ -1,10 +1,17 @@
 import React from 'react';
 
 const Location = () => {
-    const address = "Avenida jornalista possidonio cavalcanti bastos, 471 - Iputinga, Recife - PE, 50680-400";
+    const address = "Rua Esmeraldino Bandeira, 83, Graças, Recife - PE, 52011-090";
     const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
     const wazeUrl = `https://waze.com/ul?q=${encodeURIComponent(address)}&navigate=yes`;
 
+    const scrollToNext = () => {
+        const nextSection = document.getElementById('dress-code');
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+    
     return (
         <section id="location" className="location" style={{ backgroundColor: 'var(--bg-secondary)' }}>
             <div className="container" style={{ textAlign: 'center' }}>
@@ -71,6 +78,24 @@ const Location = () => {
                         Waze
                     </a>
                 </div>
+
+                <button
+                    onClick={scrollToNext}
+                    style={{
+                        background: 'none',
+                        border: 'none',
+                        color: 'white',
+                        marginTop: '3.5rem',
+                        cursor: 'pointer',
+                        animation: 'bounce 2s infinite'
+                    }}
+                    aria-label="Ver detalhes"
+                >
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 5v14M19 12l-7 7-7-7"/>
+                    </svg>
+                </button>
+                
             </div>
         </section>
     );
