@@ -49,12 +49,12 @@ const Hero = () => {
                         letterSpacing: '0.3rem',
                         fontSize: '0.8rem',
                         fontWeight: '500'
-                    }}>Chá Bar</span>
+                    }}>Chábar & Comemoração Civil</span>
                 </div>
 
                 <h1 style={{ fontSize: '2.8rem', marginBottom: '0.5rem', lineHeight: '1.2' }}>Aline & Fernando</h1>
                 <p className="serif" style={{ fontSize: '1.1rem', fontStyle: 'italic', marginBottom: '2rem' }}>
-                    25 de Outubro de 2026
+                    06 de Junho de 2026  - 16h
                 </p>
 
                 <button
