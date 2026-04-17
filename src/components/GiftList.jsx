@@ -74,6 +74,42 @@ const GiftList = () => {
             <div className="container">
                 <h2 className="serif" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '1rem' }}>Lista de Presentes</h2>
 
+                <p style={{ color: 'var(--text-secondary)', textAlign: 'justify', marginBottom: '0.10rem', fontSize: '0.95rem', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6' }}>
+                    Estamos começando uma nova fase do zero e montamos esta lista para nos ajudar a construir nosso lar! 🤍
+                <fix address in calendar/p>
+                <p style={{ color: 'var(--text-secondary)', textAlign: 'justify', marginBottom: '0.10rem', fontSize: '0.95rem', maxWidth: '700px', margin: '0 auto 2rem', lineHeight: '1.6' }}>
+                    Mais do que qualquer presente, nossa maior alegria é celebrar com você.
+                </p>
+
+                <div style={{
+                    maxWidth: '600px',
+                    margin: '0 auto 3rem',
+                    textAlign: 'center',
+                    padding: '1.5rem',
+                    backgroundColor: 'var(--bg-secondary)',
+                    borderRadius: '12px',
+                    border: '1px dashed var(--accent)'
+                }}>
+                    <p style={{ color: 'var(--text-primary)', fontWeight: '500', marginBottom: '1rem', fontSize: '1.1rem' }}>
+                        ℹ️ Como funcionam os presentes
+                    </p>
+                    
+                    <ul style={{ 
+                        color: 'var(--text-secondary)', 
+                        textAlign: 'left', 
+                        fontSize: '0.95rem', 
+                        lineHeight: '1.6',
+                        margin: '0', 
+                        paddingLeft: '1.5rem'
+                    }}>
+                        <li style={{ marginBottom: '1rem' }}>
+                            <strong>Pelo site:</strong> Escolha um item e faça o pagamento via Pix ou cartão.
+                        </li>
+                        <li>
+                            <strong>No dia do Chá:</strong> Se preferir levar o presente físico, use a lista como referência. Só pedimos com carinho (e um pouquinho de apego 😅) que siga os modelos que escolhemos, pois cada detalhe foi pensado para nossa casa nova.
+                        </li>
+                    </ul>
+                </div>
                 <div style={{
                     maxWidth: '600px',
                     margin: '0 auto 3rem',
@@ -86,7 +122,7 @@ const GiftList = () => {
                     <p style={{ color: 'var(--text-primary)', fontWeight: '500', marginBottom: '0.5rem' }}>
                         🎁 Presentes Simbólicos
                     </p>
-                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6' }}>
+                    <p style={{ textAlign: 'justify', color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6' }}>
                         Escolhemos itens divertidos e fictícios para representar sua contribuição.
                         O valor do "presente" escolhido será enviado via PIX diretamente para a nossa conta e nos ajudará a começar essa nova fase com muita alegria!
                     </p>
