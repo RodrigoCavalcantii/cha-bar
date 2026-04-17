@@ -2,11 +2,11 @@ import React from 'react';
 
 const Calendar = () => {
     const event = {
-        title: "Chá Bar Aline & Fernando",
-        description: "Venha comemorar conosco o nosso Chá Bar!",
-        location: "Avenida jornalista possidonio cavalcanti bastos, 471 - Iputinga, Recife - PE, 50680-400",
-        startTime: "20261025T160000Z",
-        endTime: "20261025T220000Z"
+        title: "Chábar & Comemoração Civil - Aline & Fernando",
+        description: "Venha comemorar conosco o nosso Chábar & Comemoração Civil!",
+        location: "Rua Esmeraldino Bandeira, 83, Graças, Recife - PE, 52011-090",
+        startTime: "20260606T190000Z",
+        endTime: "20260606T250000Z"
     };
 
     const googleUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.title)}&dates=${event.startTime}/${event.endTime}&details=${encodeURIComponent(event.description)}&location=${encodeURIComponent(event.location)}`;
@@ -32,19 +32,6 @@ const Calendar = () => {
                 >
                     Google Calendar
                 </a>
-                {/* <button
-                    onClick={() => alert('Para Apple/Outlook, salve o arquivo .ics (funcionalidade em desenvolvimento)')}
-                    style={{
-                        padding: '0.6rem 1.2rem',
-                        border: '1px solid var(--text-primary)',
-                        borderRadius: '4px',
-                        fontSize: '0.8rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.05rem'
-                    }}
-                >
-                    iCal / Outlook
-                </button> */}
             </div>
         </div>
     );
