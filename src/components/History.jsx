@@ -2,39 +2,48 @@ import React from 'react';
 import sunsetImg from '../assets/images/sunset.jpg';
 import eventImg from '../assets/images/event.jpg';
 import engagementImg from '../assets/images/engagement.jpg';
-import newHomeImg from '../assets/images/new_home.png';
+import marriedCivil from '../assets/images/casamentocivil.png';
 
 const events = [
     {
-        date: 'Julho 2023',
+        date: 'Novembro 2022',
         title: 'Onde tudo começou',
-        description: 'Nos conhecemos em uma festa através de amigos em comum. O que parecia apenas um encontro casual foi o início de uma conexão instantânea e divertida.',
+        description: 'Tudo começou em novembro de 2022… e, desde então, a gente simplesmente não desgrudou mais.',
         image: sunsetImg
-    },
-    {
-        date: 'Setembro 2023',
-        title: 'Início do namoro',
-        description: 'O pedido oficial aconteceu durante um jantar romântico especial. Naquele momento, decidimos que queríamos caminhar lado a lado nesta jornada.',
-        image: eventImg
     },
     {
         date: 'Fevereiro 2024',
         title: 'O pedido',
-        description: 'Fernando fez uma surpresa incrível em um passeio de barco com amigos. Nem eles sabiam! Ele pediu para tirar uma foto na ponta do barco e, de repente, fez o pedido mais importante de nossas vidas.',
+        description: 'Entre risadas, planos e muitos momentos juntos, fomos construindo nossa história quase sem perceber. Até que, em fevereiro de 2024, no mar de São Miguel dos Milagres, veio o “sim” oficial, com direito a pedido de casamento e tudo que esse momento merece 🤍',
         image: engagementImg
     },
     {
-        date: 'Agosto 2026',
-        title: 'Nosso novo lar',
-        description: 'Em agosto de 2026, abriremos as portas para uma nova fase. Nossa casa nova, nosso refúgio, o lugar onde continuaremos construindo nossos sonhos.',
-        image: newHomeImg
-    }
+        date: 'Maio 2026',
+        title: 'Casamento Civil',
+        description: 'Agora, com o casamento civil marcado para 15/05/2026, chegou a hora de celebrar essa nova fase da nossa vida.',
+        image: marriedCivil
+    },
+    {
+        date: 'Junho 2026',
+        title: 'Comemoração Chábar & Comemoração Civil',
+        description: 'E claro que a gente não ia deixar passar em branco! Por isso, resolvemos unir o útil ao agradável e comemorar com um chá bar (ou chá de panela, ou chá de casa nova, ou tudo junto mesmo, como você quiser chamar 😄) ao lado das pessoas que fazem parte da nossa história.',
+        image: eventImg
+    },
 ];
 
 const History = () => {
+
+
+    const scrollToNext = () => {
+        const nextSection = document.getElementById('countdown');
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <section id="history" className="history" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-            <div className="container">
+            <div className="container" style={{ textAlign: 'center' }}>
                 <h2 className="serif" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '3rem' }}>
                     Nossa História
                 </h2>
@@ -48,7 +57,7 @@ const History = () => {
                                 display: 'flex',
                                 flexDirection: 'column',
                                 gap: '1rem',
-                                marginBottom: '4rem',
+                                marginBottom: '2rem',
                                 padding: '1.5rem',
                                 backgroundColor: 'var(--white)',
                                 borderRadius: '8px',
@@ -71,6 +80,24 @@ const History = () => {
                         </div>
                     ))}
                 </div>
+
+                <button
+                    onClick={scrollToNext}
+                    style={{
+                        background: 'none',
+                        border: 'none',
+                        color: 'white',
+                        marginTop: '3.5rem',
+                        cursor: 'pointer',
+                        animation: 'bounce 2s infinite'
+                    }}
+                    aria-label="Ver detalhes"
+                >
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 5v14M19 12l-7 7-7-7"/>
+                    </svg>
+                </button>
+                
             </div>
         </section>
     );
