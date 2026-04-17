@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import Calendar from './Calendar';
 
 const Countdown = () => {
-    const targetDate = new Date('2026-10-25T16:00:00').getTime();
+    const targetDate = new Date('2026-06-06T16:00:00').getTime();
     const [timeLeft, setTimeLeft] = useState({
         days: 0,
         hours: 0,
@@ -40,6 +41,13 @@ const Countdown = () => {
         </div>
     );
 
+    const scrollToNext = () => {
+        const nextSection = document.getElementById('location');
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <section id="countdown" className="countdown" style={{ padding: '2.5rem 1.5rem', backgroundColor: 'var(--bg-secondary)' }}>
             <div className="container" style={{ textAlign: 'center' }}>
@@ -65,8 +73,27 @@ const Countdown = () => {
                 </div>
 
                 <p className="serif" style={{ marginTop: '1.5rem', fontSize: '1rem', color: 'var(--accent)', fontWeight: '500' }}>
-                    Para o nosso Chá Bar! 🏠🍻
+                    Para o nosso Chábar & Comemoração Civil ! 🏠🍻
                 </p>
+                
+                <div className="fade-in"><Calendar /></div>
+
+                <button
+                    onClick={scrollToNext}
+                    style={{
+                        background: 'none',
+                        border: 'none',
+                        color: 'white',
+                        marginTop: '3.5rem',
+                        cursor: 'pointer',
+                        animation: 'bounce 2s infinite'
+                    }}
+                    aria-label="Ver detalhes"
+                >
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 5v14M19 12l-7 7-7-7"/>
+                    </svg>
+                </button>
             </div>
         </section>
     );
