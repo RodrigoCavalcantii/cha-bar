@@ -193,29 +193,37 @@ const GiftList = () => {
                 </div>
 
                 {selectedGift && createPortal(
-                    <div style={{
-                        position: 'fixed',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        backgroundColor: 'rgba(0,0,0,0.6)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        zIndex: 1000,
-                        padding: '1.5rem'
-                    }}>
-                        <div style={{
-                            backgroundColor: 'white',
-                            padding: '2.5rem 2rem',
-                            borderRadius: '16px',
-                            maxWidth: '400px',
+                    <div 
+                        className="modal-overlay"
+                        style={{
+                            position: 'fixed',
+                            top: 0,
+                            left: 0,
                             width: '100%',
-                            textAlign: 'center',
-                            position: 'relative',
-                            boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
-                        }}>
+                            height: '100%',
+                            backgroundColor: 'rgba(0,0,0,0.6)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            zIndex: 1000,
+                            padding: '1.5rem'
+                        }}
+                    >
+                        <div 
+                            className="modal-content"
+                            style={{
+                                backgroundColor: 'white',
+                                padding: '2.5rem 2rem',
+                                borderRadius: '16px',
+                                maxWidth: '400px',
+                                width: '100%',
+                                textAlign: 'center',
+                                position: 'relative',
+                                boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+                                maxHeight: '90vh',
+                                overflowY: 'auto'
+                            }}
+                        >
                             <button
                                 onClick={() => {
                                     setSelectedGift(null);

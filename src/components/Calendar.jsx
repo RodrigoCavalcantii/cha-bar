@@ -21,14 +21,8 @@ const Calendar = () => {
                     href={googleUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{
-                        padding: '0.6rem 1.2rem',
-                        border: '1px solid var(--text-primary)',
-                        borderRadius: '4px',
-                        fontSize: '0.8rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.05rem'
-                    }}
+                    className="btn-primary"
+                    style={{ maxWidth: '200px' }}
                 >
                     Google Calendar
                 </a>
