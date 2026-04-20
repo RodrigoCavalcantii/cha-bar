@@ -100,11 +100,8 @@ const GiftList = () => {
 
     return (
         <section id="gifts" className="gifts" style={{ padding: '6rem 1.5rem', backgroundColor: 'var(--bg-primary)' }}>
-            <div className="container" style={{ border: '2px solid red' }}>
+            <div className="container">
                 <h2 className="serif" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '1rem' }}>Lista de Presentes</h2>
-                <p style={{ textAlign: 'center', color: 'red', fontSize: '0.8rem', marginBottom: '1rem' }}>
-                    DEBUG: {gifts.length} itens carregados
-                </p>
 
                 <p style={{ color: 'var(--text-secondary)', textAlign: 'justify', marginBottom: '0.10rem', fontSize: '0.95rem', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6' }}>
                     Estamos começando uma nova fase do zero e montamos esta lista para nos ajudar a construir nosso lar! 🤍
