@@ -3,17 +3,46 @@ import { createPortal } from 'react-dom';
 import { supabase } from '../lib/supabase';
 
 const gifts = [
-    { id: 1, name: '2 drinks em Fernando de Noronha', price: 200, image: '/gifts/drinksemnoronha.png' },
-    { id: 2, name: '1 fronha pra travesseiro babado de Fernando/Aline', price: 100, image: '/gifts/fronhababada.png' },
-    { id: 3, name: 'Tapa ouvido para Fernando não ouvir Aline roncando', price: 50, image: '/gifts/tapaouvido.png' },
-    { id: 4, name: 'Cota para o primeiro desentendimento sobre a louça', price: 150, image: '/gifts/lavandolouca.png' },
-    { id: 5, name: 'Kit sobrevivência para a primeira DR', price: 75, image: '/gifts/kitsobrevivenciadr.png' },
-    { id: 6, name: 'Seguro contra Fernando esquecer o aniversário', price: 300, image: '/gifts/fernandoesquecido.png' }
-];
-
-const externalStores = [
-    { name: 'Camicado', url: 'https://lista.camicado.com.br/alineefernando', color: '#e31d1a' },
-    { name: 'Shopee', url: 'https://collshp.com/alinecavalcant1811?share_channel_code=1&view=storefront', color: '#ee4d2d' }
+    { id: 1, name: '2 fronhas pra travesseiro babado de Fernando', price: 99.00, image: '/gifts/01.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-lgGMmqvBH-99,00' },
+    { id: 2, name: 'Taça de cristal para Cerveja (6 peças)', price: 105.00, image: '/gifts/02.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-1XMX780psj-105,00' },
+    { id: 3, name: 'Abafador de ruídos para Aline não escutar Fernando roncando', price: 109.90, image: '/gifts/03.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-7goh2NfLWZ-109,90' },
+    { id: 4, name: 'Assadeira Retangular Funda Brinox Ceramic Life', price: 122.00, image: '/gifts/04.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-3qPOtnFCzd-122,00' },
+    { id: 5, name: 'Kit 15 utensílios de cozinha com cabo de inox e silicone (Creme)', price: 128.00, image: '/gifts/05.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-Vmqy4wDjn-128,00' },
+    { id: 6, name: 'Churrasqueira elétrica', price: 145.00, image: '/gifts/06.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-7gopgf5JJZ-145,00' },
+    { id: 7, name: 'Cuscuzeira de Inox de Indução', price: 149.90, image: '/gifts/07.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-7goqorUTgt-149,90' },
+    { id: 8, name: 'Taças de cristal para Champagne (6 peças)', price: 152.90, image: '/gifts/08.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-DFBooUwfp-152,90' },
+    { id: 9, name: 'Jogo de Toalhas 100% Algodão 2 Peças', price: 168.00, image: '/gifts/09.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-djZW1XQvt-168,00' },
+    { id: 10, name: 'Jogo de assadeiras Marinex, 6 Peças, com Tampa', price: 172.30, image: '/gifts/10.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-TngAVV8Zn-172,30' },
+    { id: 11, name: 'Kit sobrevivência para a primeira DR', price: 180.00, image: '/gifts/11.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-VmrJJx3cl-180,00' },
+    { id: 12, name: 'Conjunto de almofadas', price: 199.90, image: '/gifts/12.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-3qPS4bwePJ-199,90' },
+    { id: 13, name: 'Cobertor para Aline estar sempre coberta de razão', price: 220.00, image: '/gifts/13.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-6MAg1iGib-220,00' },
+    { id: 14, name: 'Ajuda para Banda Tarraxinha tocar na festa', price: 250.00, image: '/gifts/14.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-7govLW5cWl-250,00' },
+    { id: 15, name: 'Edredom casal', price: 259.90, image: '/gifts/15.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-J4W4YBArr-259,90' },
+    { id: 16, name: 'Batedeira', price: 265.00, image: '/gifts/16.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-QUNugmVVF-265,00' },
+    { id: 17, name: 'Aparelho de fondue', price: 278.00, image: '/gifts/17.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-FtQlZTXe9-278,00' },
+    { id: 18, name: 'Pillow Top 1000 gramas Casal', price: 299.00, image: '/gifts/18.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-7goxX0A7jX-299,00' },
+    { id: 19, name: 'Cotinha pra Lua de Mel', price: 308.00, image: '/gifts/19.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-2YwK4XVOJJ-308,00' },
+    { id: 20, name: 'Multiprocessador', price: 315.00, image: '/gifts/20.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-TngY3wk19-315,00' },
+    { id: 21, name: 'Jogo de Lençol Completo de Algodão ', price: 349.00, image: '/gifts/21.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-lgIXPq7Fl-349,00' },
+    { id: 22, name: 'Panela de pressão de indução Brinox Antiaderente Ceramic Life', price: 372.00, image: '/gifts/22.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-qymCdl3vZ-372,00' },
+    { id: 23, name: 'Alexa pra Aline ter mais alguém pra mandar', price: 385.00, image: '/gifts/23.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-xbNI8X29v-385,00' },
+    { id: 24, name: 'Máquina de café espresso', price: 395.00, image: '/gifts/24.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-1vCkilzRJV-395,00' },
+    { id: 25, name: 'Aluguel de um bebê para treinamento', price: 400.00, image: '/gifts/25.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-qymQcUWN9-400,00' },
+    { id: 26, name: 'Adote um boleto atrasado', price: 415.00, image: '/gifts/26.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-qymU0NlDJ-415,00' },
+    { id: 27, name: 'Ajuda com os boletos pós casamento', price: 419.00, image: '/gifts/27.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-7gp336j1Fx-419,00' },
+    { id: 28, name: 'Aparelho de Jantar', price: 430.00, image: '/gifts/28.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-3qPWlynAYR-430,00' },
+    { id: 29, name: 'Uma pequena lembrancinha', price: 470.00, image: '/gifts/29.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-7wiV4L9Sh-470,00' },
+    { id: 30, name: 'Prioridade no anúncio da chegada do primeiro baby', price: 490.00, image: '/gifts/30.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-7RvERO3dZ-490,00' },
+    { id: 31, name: 'Obras de arte pra decorar a casa', price: 505.00, image: '/gifts/31.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-JrnJy5m5P-505,00' },
+    { id: 32, name: 'Ajuda para comprar ração pro porquinho engordar', price: 520.00, image: '/gifts/32.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-lgJDRp4AL-520,00' },
+    { id: 33, name: 'Jogo de Toalhas Banho + Rosto + Piso Algodão 5 Peças', price: 529.00, image: '/gifts/33.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-7gp6hEmeRb-529,00' },
+    { id: 34, name: 'Conjunto de talheres Tramontina em aço Inox', price: 554.00, image: '/gifts/34.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-1vCmLzDmlB-554,00' },
+    { id: 35, name: 'Ajuda para aposentadoria dos noivos', price: 649.00, image: '/gifts/35.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-7gp81mZ9dz-649,00' },
+    { id: 36, name: 'Adega', price: 799.00, image: '/gifts/36.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-1vCmiGxaBn-799,00' },
+    { id: 37, name: 'Dois meses de conta de luz garantida', price: 850.00, image: '/gifts/37.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-1vCmr7OwS1-850,00' },
+    { id: 38, name: 'Se por uma intervenção divina você se sentir tocado', price: 999.90, image: '/gifts/38.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-djazicBgj-999,90' },
+    { id: 39, name: 'Coifa de Ilha', price: 1300.00, image: '/gifts/39.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-7gpANLTf6F-1300,00' },
+    { id: 40, name: 'Cervejeira', price: 1997.00, image: '/gifts/40.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-3qPaSWt9Dl-1997,00' }
 ];
 
 const GiftList = () => {
@@ -119,12 +148,9 @@ const GiftList = () => {
                     borderRadius: '12px',
                     border: '1px dashed var(--accent)'
                 }}>
-                    <p style={{ color: 'var(--text-primary)', fontWeight: '500', marginBottom: '0.5rem' }}>
-                        🎁 Presentes Simbólicos
-                    </p>
                     <p style={{ textAlign: 'justify', color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6' }}>
                         Escolhemos itens divertidos e fictícios para representar sua contribuição.
-                        O valor do "presente" escolhido será enviado via PIX diretamente para a nossa conta e nos ajudará a começar essa nova fase com muita alegria!
+                        O valor do "presente" escolhido será enviado via PIX/Cartão diretamente para a nossa conta e nos ajudará a começar essa nova fase com muita alegria!
                     </p>
                 </div>
 
@@ -157,17 +183,7 @@ const GiftList = () => {
                                 </div>
                                 <button
                                     onClick={() => handleOpenGiftModal(gift)}
-                                    style={{
-                                        width: '100%',
-                                        padding: '0.6rem',
-                                        backgroundColor: 'transparent',
-                                        border: '1px solid var(--text-primary)',
-                                        borderRadius: '4px',
-                                        fontSize: '0.75rem',
-                                        textTransform: 'uppercase',
-                                        letterSpacing: '0.05rem',
-                                        cursor: 'pointer'
-                                    }}
+                                    className="btn-gift"
                                 >
                                     Presentear
                                 </button>
@@ -176,44 +192,6 @@ const GiftList = () => {
                     ))}
                 </div>
 
-                {/* External Stores Section
-                <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-                    <h3 className="serif" style={{ fontSize: '1.8rem', marginBottom: '1rem' }}>Listas em Lojas Reais</h3>
-                    <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '0.95rem', maxWidth: '700px', margin: '0 auto 2rem', lineHeight: '1.6' }}>
-                        Os presentes listados abaixo foram escolhidos com muito carinho por nós dois.
-                        Você pode usar o endereço que está na sessão de <a href="#location" style={{ color: 'var(--accent)', fontWeight: '600', textDecoration: 'none' }}>Localização</a> para enviar o presente diretamente!
-                    </p>
-                    <div style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        gap: '1.5rem',
-                        flexWrap: 'wrap'
-                    }}>
-                        {externalStores.map(store => (
-                            <button
-                                key={store.name}
-                                onClick={() => setRedirectingStore(store)}
-                                style={{
-                                    padding: '1rem 2rem',
-                                    border: `2px solid ${store.color}`,
-                                    backgroundColor: 'white',
-                                    color: store.color,
-                                    borderRadius: '50px',
-                                    fontWeight: '600',
-                                    textTransform: 'uppercase',
-                                    letterSpacing: '0.1rem',
-                                    cursor: 'pointer',
-                                    transition: 'all 0.3s ease',
-                                    minWidth: '180px'
-                                }}
-                            >
-                                {store.name}
-                            </button>
-                        ))}
-                    </div>
-                </div> */}
-
-                {/* PIX Modal */}
                 {selectedGift && createPortal(
                     <div style={{
                         position: 'fixed',
@@ -305,17 +283,8 @@ const GiftList = () => {
                                         <button
                                             type="submit"
                                             disabled={isSubmitting}
-                                            style={{
-                                                width: '100%',
-                                                padding: '1rem',
-                                                backgroundColor: 'var(--accent)',
-                                                color: 'white',
-                                                borderRadius: '8px',
-                                                fontWeight: '600',
-                                                cursor: isSubmitting ? 'not-allowed' : 'pointer',
-                                                border: 'none',
-                                                opacity: isSubmitting ? 0.7 : 1
-                                            }}
+                                            className="btn-accent"
+                                            style={{ opacity: isSubmitting ? 0.7 : 1 }}
                                         >
                                             {isSubmitting ? 'Enviando...' : 'Enviar e ir para pagamento'}
                                         </button>
@@ -337,7 +306,17 @@ const GiftList = () => {
                                 </>
                             ) : (
                                 <>
-                                    <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎁</div>
+                                    <img 
+                                        src={selectedGift.image} 
+                                        alt={selectedGift.name} 
+                                        style={{ 
+                                            width: '100%', 
+                                            height: '300px', 
+                                            objectFit: 'cover', 
+                                            borderRadius: '12px', 
+                                            marginBottom: '1.5rem' 
+                                        }} 
+                                    />
                                     <h3 className="serif" style={{ marginBottom: '0.5rem', fontSize: '1.5rem' }}>{selectedGift.name}</h3>
                                     <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
                                         Valor: <span style={{ color: 'var(--accent)', fontWeight: '600' }}>R$ {selectedGift.price.toFixed(2)}</span>
@@ -359,22 +338,10 @@ const GiftList = () => {
 
                                     <button
                                         onClick={copyPix}
+                                        className="btn-primary"
                                         style={{
-                                            width: '100%',
-                                            padding: '1.1rem',
-                                            backgroundColor: copied ? '#2ecc71' : 'var(--text-primary)',
-                                            color: 'white',
-                                            borderRadius: '8px',
-                                            fontWeight: '600',
-                                            fontSize: '0.9rem',
-                                            marginBottom: '0.8rem',
-                                            cursor: 'pointer',
-                                            border: 'none',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            gap: '0.5rem',
-                                            transition: 'all 0.3s ease'
+                                            backgroundColor: copied ? '#2ecc71' : undefined,
+                                            marginBottom: '0.8rem'
                                         }}
                                     >
                                         {copied ? (
@@ -388,24 +355,9 @@ const GiftList = () => {
                                     </button>
 
                                     <button
-                                        onClick={() => window.open(`https://link.infinitepay.io/aline-cavalcant1/VC1D-1HKAn0hnFp-100,00`, '_blank')}
-                                        style={{
-                                            width: '100%',
-                                            padding: '1.1rem',
-                                            backgroundColor: 'var(--accent)',
-                                            color: 'white',
-                                            borderRadius: '8px',
-                                            fontWeight: '600',
-                                            fontSize: '0.9rem',
-                                            marginBottom: '0.8rem',
-                                            cursor: 'pointer',
-                                            border: 'none',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            gap: '0.5rem',
-                                            transition: 'all 0.3s ease'
-                                        }}
+                                        onClick={() => window.open(selectedGift.link, '_blank')}
+                                        className="btn-accent"
+                                        style={{ marginBottom: '0.8rem' }}
                                     >
                                         <span style={{ fontSize: '1.2rem' }}>💳</span>
                                         Pagar com Cartão de Crédito
