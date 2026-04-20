@@ -75,17 +75,7 @@ const Hero = () => {
                 </button>
             </div>
 
-            <style jsx>{`
-        .hero {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        @keyframes bounce {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(15px); }
-        }
-      `}</style>
+
         </section>
     );
 };
