@@ -6,7 +6,6 @@ import DressCode from './components/DressCode';
 import GiftList from './components/GiftList';
 import MessageWall from './components/MessageWall';
 import AudioPlayer from './components/AudioPlayer';
-import Calendar from './components/Calendar';
 
 function App() {
   useEffect(() => {
@@ -36,7 +35,6 @@ function App() {
       <div className="fade-in"><DressCode /></div>
       <div className="fade-in"><GiftList /></div>
       <div className="fade-in"><Location /></div>
-      <div className="fade-in"><Calendar /></div>
       <div className="fade-in"><MessageWall /></div>
 
       <footer style={{
