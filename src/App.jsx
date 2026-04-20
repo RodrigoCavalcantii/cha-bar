@@ -33,7 +33,7 @@ function App() {
       <Hero />
       <div className="fade-in"><History /></div>
       <div className="fade-in"><DressCode /></div>
-      <div className="fade-in"><GiftList /></div>
+      <GiftList />
       <div className="fade-in"><Location /></div>
       <div className="fade-in"><MessageWall /></div>
 
