@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { supabase } from '../lib/supabase';
+import { trackGiftClick } from '../lib/tracking';
 
 const gifts = [
     { id: 1, name: '2 fronhas pra travesseiro babado de Fernando', price: 99.00, image: 'https://aline-e-fernando.vercel.app/gifts/01.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-lgGMmqvBH-99,00' },
@@ -62,6 +63,7 @@ const GiftList = () => {
         setMsgName('');
         setMsgText('');
         setCopied(false);
+        trackGiftClick(gift.id, gift.name);
     };
 
     const handleSendMessage = async (e) => {
