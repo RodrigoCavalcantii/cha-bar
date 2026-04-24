@@ -7,15 +7,31 @@ const AudioPlayer = () => {
     const SEGUNDO_INICIAL = 15; 
 
     useEffect(() => {
-        if (audioRef.current) {
-            audioRef.current.currentTime = SEGUNDO_INICIAL;
+        const audio = audioRef.current;
+        if (!audio) return;
+
+        const handleMetadata = () => {
+            audio.currentTime = SEGUNDO_INICIAL;
+        };
+
+        audio.addEventListener('canplay', handleMetadata);
+        
+        if (audio.readyState >= 2) {
+            handleMetadata();
         }
+
+        return () => audio.removeEventListener('canplay', handleMetadata);
     }, []);
 
     const togglePlay = () => {
+        if (!audioRef.current) return;
+
         if (isPlaying) {
             audioRef.current.pause();
         } else {
+            if (audioRef.current.currentTime < SEGUNDO_INICIAL) {
+                audioRef.current.currentTime = SEGUNDO_INICIAL;
+            }
             audioRef.current.play();
         }
         setIsPlaying(!isPlaying);
@@ -39,7 +55,7 @@ const AudioPlayer = () => {
             gap: '10px'
         }}>
             
-            <audio ref={audioRef} onEnded={aoTerminarMusica}>
+            <audio ref={audioRef} onEnded={aoTerminarMusica} preload="auto">
                 <source src="/musica-tema.mp3" type="audio/mpeg" />
                 Seu navegador não suporta o elemento de áudio.
             </audio>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import engagementImg from '../assets/images/historyMainPhoto.png';
+import engagementImg from '../assets/images/mainphotoedited2.jpeg';
 
 const Hero = () => {
     const [isVisible, setIsVisible] = useState(false);

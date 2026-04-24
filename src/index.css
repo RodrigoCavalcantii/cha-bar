@@ -76,15 +76,19 @@ img {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+  background-color: #D9AD90;
 }
 
 .zoom-slow {
-  animation: zoomSlow 20s infinite alternate;
+  animation: zoomSlow 25s infinite alternate ease-in-out;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 @keyframes zoomSlow {
-  from { transform: scale(1); }
-  to { transform: scale(1.1); }
+  from { transform: scale(1.02); }
+  to { transform: scale(1.07); }
 }
 
 /* Custom categories */

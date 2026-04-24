@@ -4,6 +4,7 @@ import History from './components/History';
 import Location from './components/Location';
 import DressCode from './components/DressCode';
 import GiftList from './components/GiftList';
+import RSVP from './components/RSVP';
 import MessageWall from './components/MessageWall';
 import AudioPlayer from './components/AudioPlayer';
 
@@ -34,6 +35,7 @@ function App() {
       <div className="fade-in"><History /></div>
       <div className="fade-in"><DressCode /></div>
       <GiftList />
+      <div className="fade-in"><RSVP /></div>
       <div className="fade-in"><Location /></div>
       <div className="fade-in"><MessageWall /></div>
 
