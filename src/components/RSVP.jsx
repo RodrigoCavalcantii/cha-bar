@@ -55,10 +55,10 @@ const RSVP = () => {
 
     if (submitted) {
         return (
-            <section id="rsvp" className="rsvp" style={{ padding: '6rem 1.5rem', textAlign: 'center', backgroundColor: '#D9AD90' }}>
-                <div className="container" style={{ 
-                    backgroundColor: '#D9AD90', 
-                    padding: '3rem 2rem', 
+            <section id="rsvp" className="rsvp" style={{ padding: '6rem 1.5rem', textAlign: 'center' }}>
+                <div className="container" style={{
+                    backgroundColor: 'var(--white)',
+                    padding: '3rem 2rem',
                     borderRadius: '16px',
                     boxShadow: '0 10px 30px rgba(0,0,0,0.05)'
                 }}>
@@ -82,7 +82,7 @@ const RSVP = () => {
     }
 
     return (
-        <section id="rsvp" className="rsvp" style={{ padding: '6rem 1.5rem', backgroundColor: '#D9AD90' }}>
+        <section id="rsvp" className="rsvp" style={{ padding: '6rem 1.5rem' }}>
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
                     <h2 className="serif" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Confirmação de Presença</h2>
@@ -116,7 +116,7 @@ const RSVP = () => {
                                         borderRadius: '8px',
                                         border: '1px solid #ddd',
                                         fontFamily: 'var(--font-sans)',
-                                        fontSize: '0.95rem',
+                                        fontSize: '1rem',
                                         outline: 'none',
                                         transition: 'border-color 0.3s ease'
                                     }}

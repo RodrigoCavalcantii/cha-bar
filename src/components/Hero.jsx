@@ -17,7 +17,7 @@ const Hero = () => {
     };
 
     return (
-        <section className="hero" style={{ padding: 0, height: '100vh', overflow: 'hidden' }}>
+        <section className="hero" style={{ padding: 0, paddingTop: '12dvh', height: '100dvh', overflow: 'hidden', justifyContent: 'flex-start' }}>
             <div
                 className="hero-bg zoom-slow"
                 style={{
@@ -54,7 +54,7 @@ const Hero = () => {
                 </div>
 
                 <h1 style={{ fontSize: '2.8rem', marginBottom: '0.5rem', lineHeight: '1.2' }}>Aline & Fernando</h1>
-                <p className="serif" style={{ fontSize: '1.1rem', fontStyle: 'italic', marginBottom: '2rem' }}>
+                <p className="serif" style={{ fontSize: '1.5rem', fontStyle: 'italic', marginBottom: '2rem' }}>
                     06 de Junho de 2026  - 16h
                 </p>
 

@@ -31,7 +31,7 @@ const gifts = [
     { id: 26, name: 'Adote um boleto atrasado', price: 415.00, image: 'https://cha-bar-alineefernando.vercel.app/gifts/26.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-qymU0NlDJ-415,00' },
     { id: 27, name: 'Ajuda com os boletos pós casamento', price: 419.00, image: 'https://cha-bar-alineefernando.vercel.app/gifts/27.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-7gp336j1Fx-419,00' },
     { id: 28, name: 'Aparelho de Jantar', price: 430.00, image: 'https://cha-bar-alineefernando.vercel.app/gifts/28.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-3qPWlynAYR-430,00' },
-    { id: 29, name: 'Uma pequena lembrancinha', price: 470.00, image: 'https://cha-bar-alineefernando.vercel.app/gifts/29.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-7wiV4L9Sh-470,00' },
+    { id: 29, name: 'Uma pequena lembrancinha', price: 470.00, image: 'https://cha-bar-alineefernando.vercel.app/gifts/29.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-7wiV4L9Sh-470,00', imagePosition: 'center top' },
     { id: 30, name: 'Prioridade no anúncio da chegada do primeiro baby', price: 490.00, image: 'https://cha-bar-alineefernando.vercel.app/gifts/30.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-7RvERO3dZ-490,00' },
     { id: 31, name: 'Obras de arte pra decorar a casa', price: 505.00, image: 'https://cha-bar-alineefernando.vercel.app/gifts/31.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-JrnJy5m5P-505,00' },
     { id: 32, name: 'Ajuda para comprar ração pro porquinho engordar', price: 520.00, image: 'https://cha-bar-alineefernando.vercel.app/gifts/32.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-lgJDRp4AL-520,00' },
@@ -39,7 +39,7 @@ const gifts = [
     { id: 34, name: 'Conjunto de talheres Tramontina em aço Inox', price: 554.00, image: 'https://cha-bar-alineefernando.vercel.app/gifts/34.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-1vCmLzDmlB-554,00' },
     { id: 35, name: 'Ajuda para aposentadoria dos noivos', price: 649.00, image: 'https://cha-bar-alineefernando.vercel.app/gifts/35.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-7gp81mZ9dz-649,00' },
     { id: 36, name: 'Adega', price: 799.00, image: 'https://cha-bar-alineefernando.vercel.app/gifts/36.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-1vCmiGxaBn-799,00' },
-    { id: 37, name: 'Dois meses de conta de luz garantida', price: 850.00, image: 'https://cha-bar-alineefernando.vercel.app/gifts/37.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-1vCmr7OwS1-850,00' },
+    { id: 37, name: 'Dois meses de conta de luz garantida', price: 850.00, image: 'https://cha-bar-alineefernando.vercel.app/gifts/37.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-1vCmr7OwS1-850,00', imagePosition: 'center top' },
     { id: 38, name: 'Se por uma intervenção divina você se sentir tocado', price: 999.90, image: 'https://cha-bar-alineefernando.vercel.app/gifts/38.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-djazicBgj-999,90' },
     { id: 39, name: 'Coifa de Ilha', price: 1300.00, image: 'https://cha-bar-alineefernando.vercel.app/gifts/39.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-7gpANLTf6F-1300,00' },
     { id: 40, name: 'Cervejeira', price: 1997.00, image: 'https://cha-bar-alineefernando.vercel.app/gifts/40.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-3qPaSWt9Dl-1997,00' }
@@ -99,7 +99,7 @@ const GiftList = () => {
     };
 
     return (
-        <section id="gifts" className="gifts" style={{ padding: '6rem 1.5rem', backgroundColor: 'var(--bg-primary)' }}>
+        <section id="gifts" className="gifts" style={{ padding: '6rem 1.5rem' }}>
             <div className="container">
                 <h2 className="serif" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '1rem' }}>Lista de Presentes</h2>
 
@@ -135,25 +135,11 @@ const GiftList = () => {
                             <strong>Pelo site:</strong> Escolha um item e faça o pagamento via Pix ou cartão.
                         </li>
                         <li>
-                            <strong>No dia do Chá:</strong> Se preferir levar o presente físico, use a lista como referência. Só pedimos com carinho (e um pouquinho de apego 😅) que siga os modelos que escolhemos, pois cada detalhe foi pensado para nossa casa nova.
+                            <strong>No dia do Chá:</strong> Se preferir levar o presente físico, use a lista como referência. Só pedimos com carinho que siga os modelos que escolhemos, pois cada detalhe foi pensado para nossa casa nova.
                         </li>
                     </ul>
                 </div>
-                <div style={{
-                    maxWidth: '600px',
-                    margin: '0 auto 3rem',
-                    textAlign: 'center',
-                    padding: '1.5rem',
-                    backgroundColor: 'var(--bg-secondary)',
-                    borderRadius: '12px',
-                    border: '1px dashed var(--accent)'
-                }}>
-                    <p style={{ textAlign: 'justify', color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6' }}>
-                        Escolhemos itens divertidos e fictícios para representar sua contribuição.
-                        O valor do "presente" escolhido será enviado via PIX/Cartão diretamente para a nossa conta e nos ajudará a começar essa nova fase com muita alegria!
-                    </p>
-                </div>
-
+                
                 <div style={{
                     display: 'grid',
                     gridTemplateColumns: 'repeat(2, 1fr)',
@@ -173,7 +159,7 @@ const GiftList = () => {
                                 transition: 'transform 0.3s ease'
                             }}
                         >
-                            <img src={gift.image} alt={gift.name} style={{ width: '100%', height: '140px', objectFit: 'cover' }} />
+                            <img src={gift.image} alt={gift.name} style={{ width: '100%', height: '140px', objectFit: 'cover', objectPosition: gift.imagePosition || 'center' }} />
                             <div style={{ padding: '1rem', textAlign: 'center', flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                                 <div>
                                     <h4 style={{ fontSize: '0.85rem', marginBottom: '0.5rem', lineHeight: '1.3' }}>{gift.name}</h4>
@@ -220,7 +206,7 @@ const GiftList = () => {
                                 textAlign: 'center',
                                 position: 'relative',
                                 boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
-                                maxHeight: '90vh',
+                                maxHeight: '90dvh',
                                 overflowY: 'auto'
                             }}
                         >

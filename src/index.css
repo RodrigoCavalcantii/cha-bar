@@ -3,8 +3,9 @@
 :root {
   --bg-primary: #F8F5F0;
   --bg-secondary: #EFEBE0;
+  --bg-section: #d9ad9080;
   --text-primary: #2C2C2C;
-  --text-secondary: #6B6B6B;
+  --text-secondary: #555555;
   --accent: #D4AF37; /* Gold accent */
   --white: #FFFFFF;
   --overlay: rgba(0, 0, 0, 0.2);
@@ -36,8 +37,19 @@
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: hidden;
   line-height: 1.6;
+}
+
+/* 16px mínimo evita zoom automático no iOS ao focar em inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+  font-size: 16px;
 }
 
 h1, h2, h3, .serif {
@@ -76,7 +88,6 @@ img {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
-  background-color: #D9AD90;
 }
 
 .zoom-slow {
@@ -94,12 +105,17 @@ img {
 /* Custom categories */
 section {
   min-height: 100vh;
+  min-height: 100dvh;
   padding: 4rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+}
+
+section:not(.hero) {
+  background-color: var(--bg-section);
 }
 
 .container {

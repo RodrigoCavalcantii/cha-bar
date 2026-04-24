@@ -95,7 +95,7 @@ const MessageWall = () => {
     });
 
     return (
-        <section id="messages" className="messages" style={{ backgroundColor: 'var(--bg-secondary)', paddingBottom: '8rem' }}>
+        <section id="messages" className="messages" style={{ paddingBottom: '8rem' }}>
             <div className="container">
                 <h2 className="serif" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '3rem' }}>Mural de Recados</h2>
 

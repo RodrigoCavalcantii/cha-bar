@@ -11,7 +11,7 @@ const History = () => {
     };
 
     return (
-        <section id="history" className="history" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+        <section id="history" className="history">
             <div className="container" style={{ textAlign: 'center' }}>
                 <h2 className="serif" style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '3rem' }}>
                     Nossa História
@@ -33,16 +33,16 @@ const History = () => {
                         }}
                     >
                         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-                            Tudo começou em novembro de 2022… e, desde então, a gente simplesmente não desgrudou mais.
+                            Tudo começou em novembro de 2022… e, desde então, a gente não desgrudou mais.
                         </p>
                         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-                            Entre risadas, planos e muitos momentos juntos, fomos construindo nossa história quase sem perceber. Até que, em fevereiro de 2024, no mar de São Miguel dos Milagres, veio o “sim” oficial, com direito a pedido de casamento e tudo que esse momento merece 🤍
-                            </p>
+                            Entre risadas, planos e muitos momentos juntos, fomos construindo nossa história quase sem perceber. Até que, em fevereiro de 2024, no mar de São Miguel dos Milagres, veio o “sim” oficial. 🤍
+                        </p>
                         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
                             Agora, com o casamento civil marcado para 15/05/2026, chegou a hora de celebrar essa nova fase da nossa vida.
-                            </p>
+                        </p>
                         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-                            E claro que a gente não ia deixar passar em branco! Por isso, resolvemos unir o útil ao agradável e comemorar com um chá bar (ou chá de panela, ou chá de casa nova, ou tudo junto mesmo, como você quiser chamar 😄) ao lado das pessoas que fazem parte da nossa história.
+                            Resolvemos unir o útil ao agradável e comemorar com um chá bar (ou chá de panela, ou chá de casa nova, ou tudo junto, como você quiser chamar 😄) ao lado das pessoas que fazem parte da nossa história.
                         </p>
                         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
                             Vai ser muito especial ter você com a gente nesse momento!
@@ -55,7 +55,7 @@ const History = () => {
                     style={{
                         background: 'none',
                         border: 'none',
-                        color: 'white',
+                        color: 'var(--text-primary)',
                         marginTop: '3.5rem',
                         cursor: 'pointer',
                         animation: 'bounce 2s infinite'

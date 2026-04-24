@@ -1,40 +1,24 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 
 const AudioPlayer = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const audioRef = useRef(null);
 
-    const SEGUNDO_INICIAL = 15; 
+    const SEGUNDO_INICIAL = 15;
 
-    useEffect(() => {
-        const audio = audioRef.current;
-        if (!audio) return;
-
-        const handleMetadata = () => {
-            audio.currentTime = SEGUNDO_INICIAL;
-        };
-
-        audio.addEventListener('canplay', handleMetadata);
-        
-        if (audio.readyState >= 2) {
-            handleMetadata();
-        }
-
-        return () => audio.removeEventListener('canplay', handleMetadata);
-    }, []);
-
-    const togglePlay = () => {
+    const togglePlay = async () => {
         if (!audioRef.current) return;
 
         if (isPlaying) {
             audioRef.current.pause();
+            setIsPlaying(false);
         } else {
             if (audioRef.current.currentTime < SEGUNDO_INICIAL) {
                 audioRef.current.currentTime = SEGUNDO_INICIAL;
             }
-            audioRef.current.play();
+            await audioRef.current.play();
+            setIsPlaying(true);
         }
-        setIsPlaying(!isPlaying);
     };
 
     const aoTerminarMusica = () => {
@@ -55,7 +39,7 @@ const AudioPlayer = () => {
             gap: '10px'
         }}>
             
-            <audio ref={audioRef} onEnded={aoTerminarMusica} preload="auto">
+            <audio ref={audioRef} onEnded={aoTerminarMusica} preload="metadata">
                 <source src="/musica-tema.mp3" type="audio/mpeg" />
                 Seu navegador não suporta o elemento de áudio.
             </audio>

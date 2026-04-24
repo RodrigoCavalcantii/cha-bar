@@ -13,7 +13,7 @@ const Location = () => {
     };
     
     return (
-        <section id="location" className="location" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+        <section id="location" className="location">
             <div className="container" style={{ textAlign: 'center' }}>
                 <h2 className="serif" style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>Local do Evento</h2>
                 <p className="serif" style={{ fontStyle: 'italic', color: 'var(--accent)', marginBottom: '0.5rem', fontSize: '1.2rem' }}>
@@ -84,7 +84,7 @@ const Location = () => {
                     style={{
                         background: 'none',
                         border: 'none',
-                        color: 'white',
+                        color: 'var(--text-primary)',
                         marginTop: '3.5rem',
                         cursor: 'pointer',
                         animation: 'bounce 2s infinite'
