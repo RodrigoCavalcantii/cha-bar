@@ -1,10 +1,24 @@
 import React, { useState } from 'react';
 import { supabase } from '../lib/supabase';
 
+const normalizeName = (name) =>
+    name
+        .trim()
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[̀-ͯ]/g, '')
+        .replace(/\s+/g, ' ');
+
+const hasFullName = (name) => {
+    const parts = name.trim().split(/\s+/).filter(p => p.length >= 2);
+    return parts.length >= 2;
+};
+
 const RSVP = () => {
     const [guests, setGuests] = useState(['']);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const addGuest = () => {
         setGuests([...guests, '']);
@@ -19,23 +33,57 @@ const RSVP = () => {
         const newGuests = [...guests];
         newGuests[index] = value;
         setGuests(newGuests);
+        if (errorMessage) setErrorMessage('');
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
-        // Validar se todos os nomes foram preenchidos
-        const validGuests = guests.filter(name => name.trim().length > 5);
-        if (validGuests.length === 0) {
-            alert("Por favor, preencha o nome completo dos convidados.");
+        setErrorMessage('');
+
+        const trimmedGuests = guests.map(n => n.trim()).filter(n => n.length > 0);
+        if (trimmedGuests.length === 0) {
+            setErrorMessage('Por favor, preencha o nome dos convidados.');
+            return;
+        }
+
+        const incomplete = trimmedGuests.filter(n => !hasFullName(n));
+        if (incomplete.length > 0) {
+            setErrorMessage(
+                `Por favor, informe o nome completo (nome e sobrenome): "${incomplete[0]}".`
+            );
             return;
         }
 
         setIsSubmitting(true);
-        
+
+        const { data: existing, error: fetchError } = await supabase
+            .from('confirmations')
+            .select('name');
+
+        if (fetchError) {
+            setIsSubmitting(false);
+            console.error('Erro ao verificar confirmações:', fetchError);
+            setErrorMessage('Ocorreu um erro ao verificar sua confirmação. Tente novamente.');
+            return;
+        }
+
+        const existingSet = new Set((existing || []).map(e => normalizeName(e.name)));
+        const duplicates = trimmedGuests.filter(n => existingSet.has(normalizeName(n)));
+
+        if (duplicates.length > 0) {
+            setIsSubmitting(false);
+            const list = duplicates.join(', ');
+            setErrorMessage(
+                duplicates.length === 1
+                    ? `${list} já confirmou presença.`
+                    : `Os seguintes convidados já confirmaram presença: ${list}.`
+            );
+            return;
+        }
+
         const groupId = crypto.randomUUID();
-        const dataToInsert = validGuests.map(name => ({
-            name: name.trim(),
+        const dataToInsert = trimmedGuests.map(name => ({
+            name,
             group_id: groupId
         }));
 
@@ -46,8 +94,8 @@ const RSVP = () => {
         setIsSubmitting(false);
 
         if (error) {
-            console.error("Erro ao confirmar:", error);
-            alert("Ocorreu um erro ao enviar sua confirmação. Tente novamente.");
+            console.error('Erro ao confirmar:', error);
+            setErrorMessage('Ocorreu um erro ao enviar sua confirmação. Tente novamente.');
         } else {
             setSubmitted(true);
         }
@@ -67,10 +115,11 @@ const RSVP = () => {
                     <p style={{ color: 'var(--text-secondary)' }}>
                         Obrigado por confirmar! Mal podemos esperar para celebrar com você.
                     </p>
-                    <button 
+                    <button
                         onClick={() => {
                             setGuests(['']);
                             setSubmitted(false);
+                            setErrorMessage('');
                         }}
                         style={{ marginTop: '2rem', textDecoration: 'underline', color: 'var(--accent)', fontSize: '0.9rem' }}
                     >
@@ -175,6 +224,22 @@ const RSVP = () => {
                         }}>+</span>
                         Adicionar acompanhante / familiar
                     </button>
+
+                    {errorMessage && (
+                        <div
+                            role="alert"
+                            style={{
+                                backgroundColor: '#fee2e2',
+                                color: '#b91c1c',
+                                padding: '0.75rem 1rem',
+                                borderRadius: '8px',
+                                marginBottom: '1rem',
+                                fontSize: '0.9rem'
+                            }}
+                        >
+                            {errorMessage}
+                        </div>
+                    )}
 
                     <button
                         type="submit"

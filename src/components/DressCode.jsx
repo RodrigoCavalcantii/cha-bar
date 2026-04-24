@@ -76,7 +76,7 @@ const DressCode = () => {
                         </p>
                     </div>
 
-                    <div className="image-grid" style={{ 
+                    {/* <div className="image-grid" style={{ 
                         display: 'grid', 
                         gridTemplateColumns: '1fr 1fr', 
                         gap: '1rem',
@@ -106,7 +106,7 @@ const DressCode = () => {
                                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                             />
                         </div>
-                    </div>
+                    </div> */}
                     
                 </div>
 
