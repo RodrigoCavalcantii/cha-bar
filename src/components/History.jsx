@@ -39,10 +39,7 @@ const History = () => {
                             Entre risadas, planos e muitos momentos juntos, fomos construindo nossa história quase sem perceber. Até que, em fevereiro de 2024, no mar de São Miguel dos Milagres, veio o “sim” oficial. 🤍
                         </p>
                         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-                            Agora, com o casamento civil marcado para 15/05/2026, chegou a hora de celebrar essa nova fase da nossa vida.
-                        </p>
-                        <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-                            Resolvemos unir o útil ao agradável e comemorar com um chá bar (ou chá de panela, ou chá de casa nova, ou tudo junto, como você quiser chamar 😄) ao lado das pessoas que fazem parte da nossa história.
+                            Agora chegou a hora de celebrar essa nova fase da nossa vida. Resolvemos unir o útil ao agradável e comemorar com um chá bar (ou chá de panela, ou chá de casa nova, ou tudo junto, como você quiser chamar 😄) ao lado das pessoas que fazem parte da nossa história.
                         </p>
                         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
                             Vai ser muito especial ter você com a gente nesse momento!
