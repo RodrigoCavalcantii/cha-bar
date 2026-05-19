@@ -25,7 +25,7 @@ const gifts = [
     { id: 19, name: 'Cotinha pra Lua de Mel', price: 308.00, image: 'https://aline-e-fernando.vercel.app/gifts/19.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-2YwK4XVOJJ-308,00' },
     { id: 20, name: 'Multiprocessador', price: 315.00, image: 'https://aline-e-fernando.vercel.app/gifts/20.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-TngY3wk19-315,00' },
     { id: 21, name: 'Jogo de Lençol Completo de Algodão ', price: 349.00, image: 'https://aline-e-fernando.vercel.app/gifts/21.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-lgIXPq7Fl-349,00' },
-    { id: 22, name: 'Panela de pressão de indução Brinox Antiaderente Ceramic Life', price: 372.00, image: 'https://aline-e-fernando.vercel.app/gifts/22.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-qymCdl3vZ-372,00' },
+    // { id: 22, name: 'Panela de pressão de indução Brinox Antiaderente Ceramic Life', price: 372.00, image: 'https://aline-e-fernando.vercel.app/gifts/22.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-qymCdl3vZ-372,00' },
     { id: 23, name: 'Alexa pra Aline ter mais alguém pra mandar', price: 385.00, image: 'https://aline-e-fernando.vercel.app/gifts/23.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-xbNI8X29v-385,00' },
     { id: 24, name: 'Máquina de café espresso', price: 395.00, image: 'https://aline-e-fernando.vercel.app/gifts/24.jpg', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-1vCkilzRJV-395,00' },
     { id: 25, name: 'Aluguel de um bebê para treinamento', price: 400.00, image: 'https://aline-e-fernando.vercel.app/gifts/25.png', link: 'https://link.infinitepay.io/aline-cavalcant1/VC1D-qymQcUWN9-400,00' },
