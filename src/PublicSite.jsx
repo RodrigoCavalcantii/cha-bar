@@ -15,7 +15,7 @@ function PublicSite() {
     }, []);
 
     useEffect(() => {
-        const observerOptions = { threshold: 0.1 };
+        const observerOptions = { threshold: 0 };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
